@@ -1,23 +1,105 @@
+/* Grundstyles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  padding: 20px;
+  font-family: 'Inter', sans-serif;
+  background: #e0e5ec;
+  color: #222;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-h1 {
-  color: #333;
-}
-
-button {
-  padding: 10px 20px;
-  background-color: #007bff;
+/* Top Bar */
+.topbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #1e90ff;
   color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 1000;
 }
 
-button:hover {
-  background-color: #0056b3;
+.contact-info > div {
+  margin-bottom: 0.2rem;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+}
+
+/* Damit main nicht hinter der topbar verschwindet */
+main {
+  margin-top: 70px;
+  padding: 2rem;
+  flex-grow: 1;
+}
+
+/* Glassmorphism Bild Container */
+.glass-image-container {
+  position: relative;
+  width: 300px;
+  max-width: 90vw;
+  margin: 2rem auto;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow:
+    0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-image-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: brightness(0.9);
+  transition: filter 0.3s ease;
+  border-radius: 15px;
+}
+
+.glass-image-container:hover img {
+  filter: brightness(1);
+}
+
+.glass-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  border-radius: 15px;
+  background: rgba(255 255 255 / 0.15);
+  mix-blend-mode: screen;
+}
+
+/* Footer */
+footer {
+  background: #1e90ff;
+  color: white;
+  text-align: center;
+  padding: 1rem 2rem;
+  font-size: 0.9rem;
+  margin-top: auto;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+}
+
+footer a {
+  color: #ffeb3b;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
